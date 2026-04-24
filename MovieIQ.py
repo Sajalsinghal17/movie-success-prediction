@@ -38,7 +38,7 @@ if uploaded_file:
     df = df[df["budget"] > 0]
     df = df[df["revenue"] > 0]
     df.dropna(inplace=True)
-        df["success"] = (df["revenue"] > df["budget"]).astype(int)
+    df["success"] = (df["revenue"] > df["budget"]).astype(int)
     df["main_genre"] = df["genres"].apply(lambda x: ast.literal_eval(x)[0]['name'] if x != '[]' else "Unknown")
 
     # --- Top-Level KPIs ---

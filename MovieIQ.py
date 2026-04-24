@@ -79,16 +79,7 @@ if uploaded_file:
     plt.setp(ax2.get_xticklabels(), rotation=45)
     st.pyplot(fig2)
 
-    # --- Statistical Tests ---
-    st.subheader("🧐 Statistical Tests")
-
-    t_stat, p_val = ttest_ind(filtered_df[filtered_df["success"] == 1]["vote_average"],
-                              filtered_df[filtered_df["success"] == 0]["vote_average"])
-    st.markdown(f"**T-Test (Vote Average by Success):** t-stat = {t_stat:.2f}, p = {p_val:.4f}")
-
-    contingency = pd.crosstab(filtered_df["main_genre"], filtered_df["success"])
-    chi2, p, dof, expected = chi2_contingency(contingency)
-    st.markdown(f"**Chi-Square (Genre vs Success):** chi2 = {chi2:.2f}, p = {p:.4f}")
+    #
 
     # --- ML Model ---
     st.subheader("🤖 Machine Learning: Success Prediction")

@@ -99,11 +99,7 @@ if uploaded_file:
     st.markdown("**Classification Report**")
     st.text(classification_report(y_test, y_pred))
 
-    conf_matrix = confusion_matrix(y_test, y_pred)
-    fig3, ax3 = plt.subplots()
-    sns.heatmap(conf_matrix, annot=True, fmt='d', cmap="Blues", ax=ax3)
-    ax3.set_title("Confusion Matrix")
-    st.pyplot(fig3)
+    
 
     # --- Prediction Section ---
     st.subheader("🎬 Predict Movie Success")
